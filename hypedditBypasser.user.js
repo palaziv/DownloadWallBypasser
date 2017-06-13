@@ -7,7 +7,7 @@
 
 var downloadButton = document.createElement("input");
 downloadButton.type = "button";
-downloadButton.value = "Download directly";
+downloadButton.value = "Download";
 downloadButton.onclick = downloadTrack;
 downloadButton.setAttribute("style", "position:absolute;top:250px;right:50px;");
 document.body.appendChild(downloadButton);
