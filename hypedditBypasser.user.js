@@ -13,6 +13,6 @@ downloadButton.setAttribute("style", "position:absolute;top:250px;right:50px;");
 document.body.appendChild(downloadButton);
 
 function downloadTrack(){
-    document.getElementById("comment_text").value = " "; //fill comment box
-    return filedownload();
+    document.getElementById("comment_text").value = "good"; //fill comment box
+    return downloadGate();
 }
