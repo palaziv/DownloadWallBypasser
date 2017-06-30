@@ -4,7 +4,7 @@
 // @author         cortex42 (https://github.com/cortex42)
 // @include        http://hypeddit.com/track/sc/*
 // @include        https://theartistunion.com/tracks/*
-// @version        1
+// @version        1.0
 // @grant          GM_xmlhttpRequest
 // @require        https://code.jquery.com/jquery-3.2.1.js
 // @run-at         document-idle
