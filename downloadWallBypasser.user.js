@@ -21,12 +21,12 @@ function downloadTrack(){
     var url = window.location.href;
 
     if(url.indexOf("hypeddit.com/track/sc/") != -1) { // hypeddit
-		
+
         document.getElementById("comment_text").value = "foobar"; //fill comment box
         return downloadGate();
 
     } else if(url.indexOf("theartistunion.com/tracks/" != -1)) { // theartistunion
-	
+
         var trackId = url.substring(url.indexOf("tracks/")+7);
         var apiUrl = "https://theartistunion.com/api/v3/tracks/" + trackId +"/";
 
@@ -61,7 +61,7 @@ function downloadTrack(){
                                 method: "HEAD",
                                 url: finalLink,
                                 onload: function(response) {
-                                    console.log("[DownloadWallBypasser] Response: "+response);
+                                    console.log("[DownloadWallBypasser] Response: " + response.responseText);
                                     if(response.status != 404) {
                                         console.log("[DownloadWallBypasser] .wav file found!");
                                         var a = document.createElement("a");
