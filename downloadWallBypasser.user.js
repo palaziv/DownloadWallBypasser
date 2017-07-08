@@ -66,6 +66,7 @@ function downloadTrack(){
                                         console.log("[DownloadWallBypasser] .wav file found!");
                                         var a = document.createElement("a");
                                         a.setAttribute("href", finalLink);
+                                        document.body.appendChild(a);
                                         a.click();
                                     } else {
                                         console.log("[DownloadWallBypasser] .wav file also not found...");
@@ -78,6 +79,7 @@ function downloadTrack(){
                             console.log("[DownloadWallBypasser] .mp3 file found!");
                             var a = document.createElement("a");
                             a.setAttribute("href", finalLink);
+                            document.body.appendChild(a);
                             a.click();
                         }
                     }
