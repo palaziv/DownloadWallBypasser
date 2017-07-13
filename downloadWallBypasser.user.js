@@ -2,7 +2,7 @@
 // @name           DownloadWallBypasser
 // @description    Bypass download walls on popular sound sharing sites.
 // @author         cortex42 (https://github.com/cortex42)
-// @include        http://hypeddit.com/track/sc/*
+// @include        https://hypeddit.com/track/sc/*
 // @include        https://theartistunion.com/tracks/*
 // @version        1.0
 // @grant          GM_xmlhttpRequest
