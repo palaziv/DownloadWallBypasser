@@ -14,4 +14,4 @@ Once you are on one of these sites an ugly download button is shown. Just click 
 
 *The reason I made this userscript is that I do not want to be forced to follow a bunch of unrelated accounts and to comment. I also do not like the idea that these sites have access to my account. If I like an artists work I will support him anyway!*
 
-*Feel free to improve this script! As I am not a professional web developer the code looks pretty ugly. But it works :)*
+*Feel free to improve this script!*
