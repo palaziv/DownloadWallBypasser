@@ -1,4 +1,4 @@
-*Remark: This script is just a quick hack I made for myself and therefore lacks of checks, does not comply to coding guidelines and could possibly stop working. So feel free to improve it!
+*Remark: This script is just a quick hack I made for myself and therefore lacks of checks, does not comply to coding guidelines and could possibly stop working. So feel free to improve it!*
 
 # DownloadWallBypasser
 Bypass download walls on popular sound sharing sites.
