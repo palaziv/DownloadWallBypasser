@@ -22,7 +22,9 @@ function downloadTrack(){
 
     if(url.indexOf("hypeddit.com/track/sc/") != -1) { // hypeddit
 
-        document.getElementById("comment_text").value = "foobar"; //fill comment box
+        if(document.getElementById("comment_text") !== null) {
+            document.getElementById("comment_text").value = "foobar"; //fill comment box
+        }
         return downloadGate();
 
     } else if(url.indexOf("theartistunion.com/tracks/" != -1)) { // theartistunion
