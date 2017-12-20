@@ -25,6 +25,11 @@ function downloadTrack(){
         if(document.getElementById("comment_text") !== null) {
             document.getElementById("comment_text").value = "foobar"; //fill comment box
         }
+
+        if(document.getElementById("email_address") !== null) {
+            document.getElementById("email_address").value = "foo.bar@googlemail.com";
+        }
+
         return downloadGate();
 
     } else if(url.indexOf("theartistunion.com/tracks/" != -1)) { // theartistunion
