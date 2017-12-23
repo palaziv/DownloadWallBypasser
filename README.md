@@ -1,6 +1,5 @@
-*Remark: This script is just a quick hack I made for myself and therefore lacks of checks, does not comply to coding guidelines and could possibly stop working. So feel free to improve it!*
+*Does not work anymore! I will try to fix it as soon as possible.*
 
-*The reason I made this userscript is that I do not want to be forced to follow a bunch of unrelated accounts and to comment. I also do not like the idea that these sites have access to my account. If I like an artists work I will support him anyway!*
 
 # DownloadWallBypasser
 Bypass download walls on popular sound sharing sites.
