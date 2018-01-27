@@ -2,7 +2,7 @@
 // @name           DownloadWallBypasser
 // @description    Bypass download walls on popular sound sharing sites.
 // @author         cortex42 (https://github.com/cortex42)
-// @include        https://hypeddit.com/track/sc/*
+// @include        https://hypeddit.com/track/*
 // @include        https://theartistunion.com/tracks/*
 // @version        1.0
 // @grant          GM_xmlhttpRequest
@@ -20,17 +20,12 @@ document.body.appendChild(downloadButton);
 function downloadTrack(){
     var url = window.location.href;
 
-    if(url.indexOf("hypeddit.com/track/sc/") != -1) { // hypeddit
+    if(url.indexOf("hypeddit.com/track/") != -1) { // hypeddit
 
         if(document.getElementById("comment_text") !== null) {
             document.getElementById("comment_text").value = "foobar"; //fill comment box
         }
-
-        if(document.getElementById("email_address") !== null) {
-            document.getElementById("email_address").value = "foo.bar@googlemail.com";
-        }
-
-        return downloadGate();
+        return downloadUnlimitedGate();
 
     } else if(url.indexOf("theartistunion.com/tracks/" != -1)) { // theartistunion
 
