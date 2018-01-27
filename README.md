@@ -1,4 +1,5 @@
 *Does not work anymore! I will try to fix it as soon as possible.*
+*Update: Downloads from Hypeddit work again*
 
 
 # DownloadWallBypasser
