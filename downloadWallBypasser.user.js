@@ -4,7 +4,7 @@
 // @author         cortex42 (https://github.com/cortex42)
 // @include        https://hypeddit.com/track/*
 // @include        https://theartistunion.com/tracks/*
-// @version        1.0
+// @version        1.3
 // @grant          GM_xmlhttpRequest
 // @require        https://code.jquery.com/jquery-3.2.1.js
 // @run-at         document-idle
@@ -38,51 +38,24 @@ function downloadTrack(){
             onload: function(response) {
                 var responseText = response.responseText;
                 console.log("[DownloadWallBypasser] ResponseText: "+ responseText);
-                var audioSource = responseText.substring(responseText.indexOf("https://content.theartistunion.com/tracks/stream_files/"), responseText.indexOf(".mp3?")+4);
-                var finalLink = audioSource.replace("stream_files", "original_files");
-                console.log("[DownloadWallBypasser] FinalLink: " + finalLink);
+                // "audio_source":"https://d2tml28x3t0b85.cloudfront.net/tracks/stream_files/000/749/807/original/Sarcasmo%20-%20Roraima%20%28Original%20Mix%29%20-%20%5BFREE%20DOWNLOAD%5D.mp3?1519832964","blu
+                var downloadLink = responseText.substring(responseText.indexOf("audio_source\":") + "audio_source\":\"".length, responseText.indexOf(",\"blurred_artwork")-1);
+                console.log("[DownloadWallBypasser] DownloadLink: "+ downloadLink);
 
-                if(finalLink.indexOf("u0026") != -1) {
-                    var index = finalLink.indexOf("u0026");
-                    finalLink = finalLink.substr(0, index-1) + "&" + finalLink.substr(index+5);
-                    console.log("[DownloadWallBypasser] Replaced \\u0026 in FinalLink: " + finalLink);
-                }
-
-                // now check if the link really exists
                 GM_xmlhttpRequest({
                     method: "HEAD",
-                    url: finalLink,
+                    url: downloadLink,
                     onload: function(response) {
-                        if(response.status == 404) {
-                            // now try it with .wav
-                            console.log("[DownloadWallBypasser] .mp3 file not found, trying with .wav");
-                            finalLink = finalLink.replace(".mp3", ".wav");
-                            console.log("[DownloadWallBypasser] FinalLink: " + finalLink);
-
-                            GM_xmlhttpRequest({
-                                method: "HEAD",
-                                url: finalLink,
-                                onload: function(response) {
-                                    console.log("[DownloadWallBypasser] Response: " + response.responseText);
-                                    if(response.status != 404) {
-                                        console.log("[DownloadWallBypasser] .wav file found!");
-                                        var a = document.createElement("a");
-                                        a.setAttribute("href", finalLink);
-                                        document.body.appendChild(a);
-                                        a.click();
-                                    } else {
-                                        console.log("[DownloadWallBypasser] .wav file also not found...");
-                                        alert("[DownloadWallBypasser] Failed trying to find the direct download link!");
-                                        return;
-                                    }
-                                }
-                            });
-                        } else {
-                            console.log("[DownloadWallBypasser] .mp3 file found!");
+                        if(response.status != 404) {
+                            console.log("[DownloadWallBypasser] file found!");
                             var a = document.createElement("a");
-                            a.setAttribute("href", finalLink);
+                            a.setAttribute("href", downloadLink);
                             document.body.appendChild(a);
                             a.click();
+                        } else {
+                            console.log("[DownloadWallBypasser] file not found.");
+                            alert("[DownloadWallBypasser] Failed trying to find the direct download link!");
+                            return;
                         }
                     }
                 });
