@@ -1,3 +1,6 @@
+
+**This extension does NOT work anymore!**
+
 # DownloadWallBypasser
 Bypass download walls on popular sound sharing sites.
 
